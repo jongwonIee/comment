@@ -1,9 +1,12 @@
 class PostsController < ApplicationController
   def index
     @posts = Post.all
+    @post = Post.new
     @posts_love = @posts.where(category_id: 1)
     @posts_life = @posts.where(category_id: 2)
     @posts_serious = @posts.where(category_id: 3)
+    @comment = Comment.new
+    @categories = Category.all
   end
 
   def new
