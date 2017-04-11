@@ -19,47 +19,14 @@ New Post
     <br>
 
       <% p.comments.each do |c| %>
-        <%= c.content %>
+        <%= c.content %><br>
       <% end %>
 
       <%= form_for @comment, url: post_comments_path(post_id: p.id ) do |f| %>
-          <%= f.text_area :content, id: "comment_body#{p.id}", rows:3 %>
+          <%= f.text_area :content %> <br>
           <%= f.submit "작성하기" %>
       <% end %>
     <br>
-<% end %>
-
-<hr>
-사랑
-<br>
-<% @posts_love.each do |p| %>
-    <%= p.title %><br>
-    <%= p.content%><br>
-    <%= link_to '수정하기', edit_post_path(p.id), 'data-toggle' => 'modal', 'data-target' => '#myModal'  %> |
-    <%= link_to '삭제하기', post_path(p.id), method: :delete, data: { confirm: '이 글을 삭제하시겠습니까?'} %>
-    <br><br>
-<% end %>
-
-<hr>
-사는얘기
-<br>
-<% @posts_life.each do |p| %>
-    <%= p.title %><br>
-    <%= p.content %><br>
-    <%= link_to '수정하기', edit_post_path(p.id), 'data-toggle' => 'modal', 'data-target' => '#myModal'  %> |
-    <%= link_to '삭제하기', post_path(p.id), method: :delete, data: { confirm: '이 글을 삭제하시겠습니까?'} %>
-    <br><br>
-<% end %>
-
-<hr>
-저..진지합니다
-<br>
-<% @posts_serious.each do |p| %>
-    <%= p.title %><br>
-    <%= p.content %><br>
-    <%= link_to '수정하기', edit_post_path(p.id), 'data-toggle' => 'modal', 'data-target' => '#myModal' %> |
-    <%= link_to '삭제하기', post_path(p.id), method: :delete, data: { confirm: '이 글을 삭제하시겠습니까?'} %>
-    <br><br>
 <% end %>
 
 <!-- Modal -->

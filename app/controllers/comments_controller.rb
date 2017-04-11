@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.post_id = params[:post_id]
     @comment.save
-
     redirect_to posts_path
   end
 
